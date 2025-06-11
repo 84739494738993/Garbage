@@ -1,0 +1,10 @@
+name: GitHub Actions Demo
+#run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Daily-Run:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Chekout Code
+          uses: Actions/Chekout@v4
+      
