@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+      - name: Instal Dependes
+        run: pip install -r requirements.txt
       - name: Run App
         run: python sms.py
 
