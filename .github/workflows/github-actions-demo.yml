@@ -1,19 +1,25 @@
 name: GitHub Actions Demo
 
 on:
-  push:           # запуск при каждом push
-  workflow_dispatch:  # добавим возможность запуска вручную
+  push:
+  workflow_dispatch:
 
 jobs:
   daily-run:
-    name: Daily Run
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      - name: Instal Dependes
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
         run: pip install -r requirements.txt
+
       - name: Run App
         run: python sms.py
 
