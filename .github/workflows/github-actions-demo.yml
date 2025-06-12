@@ -3,6 +3,8 @@ name: GitHub Actions Demo
 on:
   push:
   workflow_dispatch:
+  schedule:
+    - cron: '28 16 * * *'
 env:
     TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
     TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
