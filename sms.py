@@ -5,11 +5,11 @@ from dotenv import load_dotenv
 
 
 def get_date():
-    list_day_zmiszane   = [7,21,7,21,4,18,2,16,30,13,27,11,25,8,22,5,19,3,17,31,14,28,12,27,9,23]
+    list_day_zmieszane   = [7,21,7,21,4,18,2,16,30,13,27,11,25,8,22,5,19,3,17,31,14,28,12,27,9,23]
     list_day_segregacja   = [26,26,23,21,18,16,13,10,8,5,3,31,28]
     list_day_bioodpady   = [6,20,6,20,3,17,26,15,29,12,26,10,24,7,21,4,18,2,16,30,13,27,11,20,8,22]
     list_day_gabaryty   = [3,16]
-    list_month_zmiszane   = [2,2,3,3,4,4,5,5,5,6,6,7,7,8,8,9,9,10,10,10,11,11,12,12,1,1]
+    list_month_zmieszane   = [2,2,3,3,4,4,5,5,5,6,6,7,7,8,8,9,9,10,10,10,11,11,12,12,1,1]
     list_month_segregacja   = [2,3,4,5,6,7,8,9,10,11,12,1]
     list_month_bioodpady   = [2,2,3,3,4,4,4,5,5,6,6,7,7,8,8,9,9,10,10,10,11,11,12,12,1,1]
     list_month_gabaryty   = [4,10]
@@ -18,9 +18,9 @@ def get_date():
     day = today.day
     month = today.month
     Answer = []
-    for i in range(len(list_day_zmiszane)):
-        if list_day_zmiszane[i]==day+1 and list_month_zmiszane[i]==month:
-            Answer.append("zmiszane")
+    for i in range(len(list_day_zmieszane)):
+        if list_day_zmieszane[i]==day+1 and list_month_zmieszane[i]==month:
+            Answer.append("zmieszane")
     for i in range(len(list_day_segregacja)):
         if list_day_segregacja[i]==day+1 and list_month_segregacja[i]==month:
             Answer.append("segregacja")
@@ -45,8 +45,12 @@ CHAT_ID = os.getenv('TELEGRAM_CHANNEL_ID')  # или TELEGRAM_CHAT_ID
 bot = telebot.TeleBot(TOKEN)
 
 # Сообщение
-TEXT = get_date()
 print(*get_date())
 # Отправка сообщения
-bot.send_message(CHAT_ID, TEXT)
+for i in get_date():
+    if len(get_date())>0:
+        TEXT = f'Dobry wieczór mamo jutro są: {get_date()}'
+    else:
+        TEXT = f'Dobry wieczór mamo jutro niema nic można odpocząć!'
+    bot.send_message(CHAT_ID, TEXT)
 
