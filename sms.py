@@ -47,10 +47,10 @@ bot = telebot.TeleBot(TOKEN)
 # Сообщение
 print(*get_date())
 # Отправка сообщения
-for i in get_date():
-    if len(get_date())>0:
-        TEXT = f'Dobry wieczór, mamo, jutro są: {get_date()}'
-    else:
-        TEXT = f'Dobry wieczór, mamo, jutro niema nic - można odpocząć!'
-    bot.send_message(CHAT_ID, TEXT)
+if len(get_date())>0:
+    for i in get_date():
+        TEXT = f'Dobry wieczór, mamo, jutro są: {i}'
+else:
+    TEXT = f'Dobry wieczór, mamo, jutro niema nic - można odpocząć!'
+bot.send_message(CHAT_ID, TEXT)
 
