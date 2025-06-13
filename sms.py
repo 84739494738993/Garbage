@@ -2,6 +2,7 @@ import telebot
 from datetime import date
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 
 
 def get_date():
@@ -15,21 +16,22 @@ def get_date():
     list_month_gabaryty   = [4,10]
 
     today = date.today()
+    now = datetime.now()
     day = today.day
     month = today.month
     Answer = []
     for i in range(len(list_day_zmieszane)):
-        if list_day_zmieszane[i]==day+1 and list_month_zmieszane[i]==month:
-            Answer.append("zmieszane")
+        if list_day_zmieszane[i]==day+1 and list_month_zmieszane[i]==month or list_day_zmieszane[i]==day and list_month_zmieszane[i]==month and now.hour < 8:
+            Answer.append("zmieszane 🟢🗑️")
     for i in range(len(list_day_segregacja)):
-        if list_day_segregacja[i]==day+1 and list_month_segregacja[i]==month:
-            Answer.append("segregacja")
+        if list_day_segregacja[i]==day+1 and list_month_segregacja[i]==month or list_day_segregacja[i]==day and list_month_segregacja[i]==month and now.hour < 8:
+            Answer.append("segregacja 🟡🗑️")
     for i in range(len(list_day_bioodpady)):
-        if list_day_bioodpady[i]==day+1 and list_month_bioodpady[i]==month:
-            Answer.append("bioodpady")
+        if list_day_bioodpady[i]==day+1 and list_month_bioodpady[i]==month or list_day_bioodpady[i]==day and list_month_bioodpady[i]==month and now.hour < 8:
+            Answer.append("bioodpady 🟤🗑️")
     for i in range(len(list_day_gabaryty)):
-        if list_day_gabaryty[i]==day+1 and list_month_gabaryty[i]==month:
-            Answer.append("gabaryty")
+        if list_day_gabaryty[i]==day+1 and list_month_gabaryty[i]==month or list_day_gabaryty[i]==day and list_month_gabaryty[i]==month and now.hour < 8:
+            Answer.append("gabaryty 🟠🗑️")
     return Answer
 
 if __name__ == '__main__':
@@ -49,7 +51,7 @@ print(*get_date())
 # Отправка сообщения
 if len(get_date())>0:
     for i in get_date():
-        TEXT = f'Dobry wieczór, mamo, jutro są: {i}'
+        TEXT = f'Dobry wieczór, mamo, jutro/dzisiaj są: {i}'
 else:
     TEXT = f'Dobry wieczór, mamo, jutro niema nic - można odpocząć!'
 bot.send_message(CHAT_ID, TEXT)
