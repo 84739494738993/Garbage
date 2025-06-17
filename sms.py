@@ -21,22 +21,22 @@ def get_date():
     month = today.month
     Answer = []
     for i in range(len(list_day_zmieszane)):
-        if list_day_zmieszane[i]==day+1 and list_month_zmieszane[i]==month:
+        if list_day_zmieszane[i]==day+1 and list_month_zmieszane[i]==month and now.hour > 16:
             Answer.append(f'Dobry wieczór 🌑, mamo, jutro są: zmieszane 🟢🗑️🍄‍🟫🍞🌽🍓')
         elif list_day_zmieszane[i]==day and list_month_zmieszane[i]==month and now.hour < 8:
             Answer.append(f'Dobry ranok 🌞, mamo, dzisiaj są: zmieszane 🟢🗑️🍄‍🟫🍞🌽🍓 trzeba biec 🏃‍♀️!!!')
     for i in range(len(list_day_segregacja)):
-        if list_day_segregacja[i]==day+1 and list_month_segregacja[i]==month:
+        if list_day_segregacja[i]==day+1 and list_month_segregacja[i]==month and now.hour > 16:
             Answer.append(f'Dobry wieczór 🌑, mamo, jutro jest: segregacja 🟡🗑️📃📖📰🚽')
         elif list_day_segregacja[i]==day and list_month_segregacja[i]==month and now.hour < 8:
             Answer.append(f'Dobry ranok 🌞, mamo, dzisiaj jest: segregacja 🟡🗑️📃📖📰🚽 trzeba biec 🏃‍♀️!!!')
     for i in range(len(list_day_bioodpady)):
-        if list_day_bioodpady[i]==day+1 and list_month_bioodpady[i]==month:
+        if list_day_bioodpady[i]==day+1 and list_month_bioodpady[i]==month and now.hour > 16:
             Answer.append(f'Dobry wieczór 🌑, mamo, jutro są: bioodpady 🟤🗑️🥑🍌🧅🌰')
         elif list_day_bioodpady[i]==day and list_month_bioodpady[i]==month and now.hour < 8:
             Answer.append(f'Dobry ranok 🌞, mamo, dzisiaj są: bioodpady 🟤🗑️🥑🍌🧅🌰 trzeba biec 🏃‍♀️!!!')            
     for i in range(len(list_day_gabaryty)):
-        if list_day_gabaryty[i]==day+1 and list_month_gabaryty[i]==month:
+        if list_day_gabaryty[i]==day+1 and list_month_gabaryty[i]==month and now.hour > 16:
             Answer.append(f'Dobry wieczór 🌑, mamo, jutro są: gabaryty 🟠🗑️🚪🚽🛁📺')
         if list_day_gabaryty[i]==day and list_month_gabaryty[i]==month and now.hour < 8:
             Answer.append(f'Dobry ranok 🌞, mamo, dzisiaj są: gabaryty 🟠🗑️🚪🚽🛁📺 trzeba biec 🏃‍♀️!!!')
