@@ -64,6 +64,6 @@ else:
     if now.hour < 12:
         TEXT = f'Dobry ranok 🌞, mamo, jutro niema nic 🎉 - można odpocząć 💤!!!'
     elif now.hour > 17:
-        TEXT = f'Dobry wiczór 🌑, mamo, jutro niema nic 🎉 - można odpocząć 💤!!!'
+        TEXT = f'Dobry wieczór 🌑, mamo, jutro niema nic 🎉 - można odpocząć 💤!!!'
 bot.send_message(CHAT_ID, TEXT)
 
