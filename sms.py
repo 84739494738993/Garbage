@@ -6,14 +6,14 @@ from datetime import datetime
 
 
 def get_date():
-    list_day_zmieszane   = [7,21,7,21,4,18,2,16,30,13,27,11,25,8,22,5,19,3,17,31,14,28,12,27,9,23]
-    list_day_segregacja   = [26,26,23,21,18,16,13,10,8,5,3,31,28]
-    list_day_bioodpady   = [6,20,6,20,3,17,26,15,29,12,26,10,24,7,21,4,18,2,16,30,13,27,11,20,8,22]
-    list_day_gabaryty   = [3,16]
-    list_month_zmieszane   = [2,2,3,3,4,4,5,5,5,6,6,7,7,8,8,9,9,10,10,10,11,11,12,12,1,1]
-    list_month_segregacja   = [2,3,4,5,6,7,8,9,10,11,12,12,1]
-    list_month_bioodpady   = [2,2,3,3,4,4,4,5,5,6,6,7,7,8,8,9,9,10,10,10,11,11,12,12,1,1]
-    list_month_gabaryty   = [4,10]
+    list_day_zmieszane   = [6,20,6,20]
+    list_day_segregacja   = [25,25]
+    list_day_bioodpady   = [5,19,5,19]
+    list_day_gabaryty   = [0]
+    list_month_zmieszane   = [2,2,3,3]
+    list_month_segregacja   = [2,3]
+    list_month_bioodpady   = [2,2,3,3]
+    list_month_gabaryty   = [0]
     today = date.today()
     now = datetime.now()
     day = today.day
