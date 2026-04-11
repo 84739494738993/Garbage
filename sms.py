@@ -60,7 +60,7 @@ if len(get_date())>0:
     for i in get_date():
         TEXT = i
 else:
-    if now.hour < 12:
+    if now.hour < 17:
         TEXT = f'Dobry ranok 🌞, mamo, dzisiaj niema nic 🎉 - można odpocząć 💤!!!'
     elif now.hour >= 17:
         TEXT = f'Dobry wieczór 🌑, mamo, jutro niema nic 🎉 - można odpocząć 💤!!!'
