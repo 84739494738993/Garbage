@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '23 15 * * *'
-    - cron: '23 3 * * *'
+    - cron: '23 2 * * *'
 env:
     TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
     TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
